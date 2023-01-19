@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vladyslav Makota",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",
     "core-js": "^3.27.1",
