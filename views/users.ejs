@@ -1,0 +1,40 @@
+<%- include('header'); -%>
+
+<h1 class="center-header">Our team</h1>
+<div class="d-flex justify-content-center">
+<div class="list-group w-auto custom-projects-div">
+  <div class="list-group-item d-flex gap-3 py-3" aria-current="true">
+    <i class="fa-solid fa-address-card fa-xl"></i>
+    <div class="d-flex gap-2 w-100 justify-content-between user-custom">
+      <div>
+        <h6 class="mb-0"><%= cartman._fieldsProto.username.stringValue %> </h6>
+        <p class="mb-0 opacity-75">Position: <%= cartman._fieldsProto.position.stringValue %></p>
+      </div>
+    </div>
+  </div>
+  <% docsArray.forEach((doc) => { %>
+  <%  if (doc._fieldsProto.username.stringValue !== 'cartman'){ %>
+    <form method="POST" action="/users/<%= doc._fieldsProto._id.stringValue %>?_method=DELETE" >
+      <div class="list-group-item d-flex gap-3 py-3" aria-current="true">
+        <i class="fa-solid fa-address-card fa-xl"></i>
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-0"><%= doc._fieldsProto.username.stringValue %> </h6>
+            <p class="mb-0 opacity-75">Position: <%= doc._fieldsProto.position.stringValue %></p>
+          </div>
+          <button type="submit" class="btn btn-outline-danger custom-btn-delete"><i class="fa-solid fa-user-minus"></i>Delete</button>
+        </div>
+      </div>
+    </form>
+  <%  }  %>
+  <% }); %>
+</div>
+</div>
+<form action="/users/create" method="GET">
+  <div class="d-grid gap-2 col-6 mx-auto custom-users-btn">
+    <button class="btn btn-outline-info" type="submit">Add a new employee account <i class="fa-solid fa-user-plus"></i></button>
+  </div>
+</form>
+
+
+<%- include('footer'); -%>

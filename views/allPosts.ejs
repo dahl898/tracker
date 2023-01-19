@@ -1,0 +1,34 @@
+<%- include('header'); -%>
+  <div class="container-fluid">
+    <form action="/check" method="GET">
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Create a new project</button>
+      </div>
+    </form>
+    <h1 class="center-header">Our projects</h1>
+    <div class="d-flex justify-content-center custom-projects-div">
+      <div class="list-group w-auto">
+        <% docsArray.forEach((doc)=> { %>
+          <a href="projects/<%= doc._fieldsProto._id.stringValue %>"
+            class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <i class="fa-solid fa-building-flag fa-xl"></i>
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Project ID: <%= doc._fieldsProto.agreementID.stringValue %>
+                </h6>
+                <p class="mb-0 opacity-75">Cutomer data: <%= doc._fieldsProto.investorFirstName.stringValue %>
+                    <%= doc._fieldsProto.investorLastName.stringValue %>
+                </p>
+                <p class="mb-0 opacity-75">Customer adress: <%= doc._fieldsProto.investorLocationCity.stringValue %>
+                    <%= doc._fieldsProto.investorStreet.stringValue %>
+                </p>
+              </div>
+              <small class="opacity-50 text-nowrap"></small>
+            </div>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+<%- include('footer'); -%>

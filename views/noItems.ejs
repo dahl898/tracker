@@ -1,0 +1,16 @@
+<%- include('header'); -%>
+<h1 class="noItems-h1">There are no <%= items %> added yet</h1>
+<% if (items === 'projects') { %>
+  <form action="/check" method="GET">
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="submit">Create a new project</button>
+    </div>
+  </form>
+<% }else if (items === 'users') {%>
+<form action="/users/create" method="GET">
+  <div class="d-grid gap-2 col-6 mx-auto custom-users-btn">
+    <button class="btn btn-outline-info" type="submit">Create a new user account <i class="fa-solid fa-user-plus"></i></button>
+  </div>
+</form>
+<% } %>
+<%- include('footer'); -%>

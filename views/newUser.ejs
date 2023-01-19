@@ -1,0 +1,25 @@
+<%- include('header'); -%>
+<div class="container-fluid">
+<h1 class="center-header">Create new user account</h1>
+<div class="d-flex justify-content-center">
+<form action="/register" method="POST">
+  <div class="mb-3 custom-cred-class">
+    <label for="username" class="form-label custom-cred-label"><strong><h5>Username:</h5></strong></label>
+    <input type="text" class="form-control" id="username" name="username" value="<%=username%>" readonly>
+    <label for="password" class="form-label custom-cred-label"><strong><h5>Password:</h5></strong></label>
+    <input type="password" class="form-control" id="password" name="password"></input>
+    <label for="position" class="form-label custom-cred-label"><strong><h5>Position:</h5></strong></label>
+    <input type="text" class="form-control" id="position" name="position"></input>
+    <div class="form-check form-switch custom-admin-switch">
+      <input class="form-check-input custom-control-input" type="checkbox" role="switch" name="admin" id="admin">
+      <label class="form-check-label" for="admin">Give admin role</label>
+    </div>
+    <button class="btn btn-success" type="submit">Confirm</button>
+  </div>
+
+    
+
+</form>
+</div>
+</div>
+<%- include('footer'); -%>

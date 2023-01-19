@@ -1,0 +1,24 @@
+<%- include('header'); -%>
+  <div class="container-fluid">
+    <form action="/check" method="GET">
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Create a new project</button>
+      </div>
+    </form>
+    <div class="d-flex justify-content-center">
+      <div class="rules">
+        <h2>What can I do with this app?</h2>
+        <ul>
+          <li>Create virtual instances of projects you're currently working on;</li>
+          <li>Modify those instances after creation;</li>
+          <li>Export text data of the project to excel file;</li>
+          <li>Download project images as a ZIP file;</li>
+        </ul>
+        <h2>How do I start?</h2>
+        <ul>
+          <li>Simply create a new project by clicking on the huge blue button above;</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<%- include('footer'); -%>

@@ -1,0 +1,19 @@
+<%- include('header'); -%>
+  <h2 class="check-h1">Please enter a unique username without spaces and special characters</h2>
+  <p class="check-h1">Lower dash character ("_") is allowed, so you can use it as a divider, if you need to.</p>
+  <form action="/user/check" method="POST">
+    <div class="mb-3 check-input-div">
+      <input class="form-control" type="text" placeholder="Username" name="username"
+        aria-label="default input example" pattern="([A-Za-z0-9_])+"
+        title="This field must not contain spaces and special characters accept '_'">
+    </div>
+    <div class="check-buttons-div">
+      <div class="btn-group check-group-buttons-div" role="group" aria-label="Basic mixed styles example">
+        <input type="submit" class="btn btn-secondary check-buttons" form="goBack" value="Cancel"></input>
+        <button type="submit" class="btn btn-success check-buttons">Confirm</button>
+      </div>
+    </div>
+  </form>
+  <form id="goBack" action="/users" method="GET"></form>
+
+<%- include('footer'); -%>

@@ -1,0 +1,144 @@
+<%- include('header'); -%>
+  <div class="container-fluid">
+    <h1 class="compose-h1">Edit project</h1>
+    <h3 class="edit-h3">Project ID: <%= textDataObject.agreementID %>
+    </h3>
+    <div class="compose-input">
+      <form action="/edit/<%= textDataObject._id %>" method="POST">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                <strong>Customer contact details</strong>
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <% if(textDataObject.modifier) { %>
+                  <div class="container text-start">
+                    <div class="row">
+                      <div class="col">
+                        <label for="initiator"><strong>Project created by:</strong></label>
+                        <input id="initiator" class="form-control-plaintext" name="initiator" type="text"
+                          value="<%= textDataObject.initiator %>" readonly>
+                        <label for="creationDate"><strong>Creation date:</strong></label>
+                        <input id="creationDate" class="form-control-plaintext" name="creationDate" type="text"
+                          value="<%= textDataObject.creationDate %>" readonly>
+                        <label for="creationTime"><strong>Creation time:</strong></label>
+                        <input id="creationTime" class="form-control-plaintext" name="creationTime" type="text"
+                          value="<%= textDataObject.creationTime %>" readonly>
+                      </div>
+                      <div class="col">
+                        <label for="modifier"><strong>Last modification done by:</strong></label>
+                        <input id="modifier" class="form-control-plaintext" name="modifier" type="text"
+                          value="<%= textDataObject.modifier%>" readonly>
+                        <label for="dateModified"><strong>Last modification date:</strong></label>
+                        <input id="dateModified" class="form-control-plaintext" name="dateModified" type="text"
+                          value="<%= textDataObject.dateModified %>" readonly>
+                        <label for="timeModified"><strong>Last modification time:</strong></label>
+                        <input id="timeModified" class="form-control-plaintext" name="timeModified" type="text"
+                          value="<%= textDataObject.timeModified %>" readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <% } else { %>
+                    <label for="initiator"><strong>Project created by:</strong></label>
+                    <input id="initiator" class="form-control-plaintext" name="initiator" type="text"
+                      value="<%= textDataObject.initiator %>" readonly>
+                    <label for="creationDate"><strong>Creation date:</strong></label>
+                    <input id="creationDate" class="form-control-plaintext" name="creationDate" type="text"
+                      value="<%= textDataObject.creationDate %>" readonly>
+                    <label for="creationTime"><strong>Creation time:</strong></label>
+                    <input id="creationTime" class="form-control-plaintext" name="creationTime" type="text"
+                      value="<%= textDataObject.creationTime %>" readonly>
+                    <% } %>
+                      <label for="investorCreds"><strong>Customer (first and last name):</strong></label>
+                      <div id="investorCreds" class="input-group">
+                        <input type="text" class="form-control" name="investorFirstName"
+                          value="<%= textDataObject.investorFirstName %>" 
+                          placeholder="First name" pattern="([A-Za-z])+"
+                          title="You can enter only characters from latin alphabet in this field">
+                        <input type="text" class="form-control" name="investorLastName"
+                          value="<%= textDataObject.investorLastName %>" placeholder="Last name" pattern="([A-Za-z])+"
+                          title="You can enter only characters from latin alphabet in this field">
+                      </div>
+                      <label for="investorLocationCity"><strong>City:</strong></label>
+                      <input id="investorLocationCity" type="text" class="form-control" name="investorLocationCity"
+                        value="<%= textDataObject.investorLocationCity %>" placeholder="Customer location (city)">
+                      <label for="investorPostCode"><strong>Postal code:</strong></label>
+                      <input id="investorPostCode" type="text" class="form-control" name="investorPostCode"
+                        value="<%= textDataObject.investorPostCode %>" placeholder="Customer location (postal code)">
+                      <label for="investorStreet"><strong>Street:</strong></label>
+                      <input id="investorStreet" type="text" class="form-control" name="investorStreet"
+                        value="<%= textDataObject.investorStreet %>" placeholder="Customer location (street)">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <strong>Project details</strong>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <label for="agreementID"><strong>Project ID:</strong></label>
+                      <input id="agreementID" class="form-control" name="agreementID" type="text"
+                        value="<%= textDataObject.agreementID %>" readonly>
+                      <label for="date"><strong>Date:</strong></label>
+                      <input id="date" class="form-control" name="date" type="text" value="<%= textDataObject.date %>" placeholder="When the contract has been signed?">
+                <label for="photosCount"><strong>Number of photos:</strong></label>
+                <input id="photosCount" class="form-control" name="photosCount" type="text"
+                  value="<%= textDataObject.photosCount %>" placeholder="How many photos were contracted?">
+                <label for="photosType"><strong>Type of photos:</strong></label>
+                <input id="photosType" class="form-control" name="photosType" type="text"
+                  value="<%= textDataObject.photosType %>" placeholder="What type of photos client ordered?">
+                <label for="description"><strong>Brief description of desired content:</strong></label>
+                <input id="description" class="form-control" name="description" type="text"
+                  value="<%= textDataObject.description %>" placeholder="What must be pictured?">
+                <label for="estimatedPrice"><strong>Estimated price:</strong></label>
+                <input id="estimatedPrice" class="form-control" name="estimatedPrice" type="text"
+                  value="<%= textDataObject.estimatedPrice %>" placeholder="What was the estimated price for the project (USD)">
+                <label for="paymentStatus"><strong>Payment recieved?</strong></label>
+                <input id="paymentStatus" class="form-control" name="paymentStatus" type="text"
+                  value="<%= textDataObject.paymentStatus %>" placeholder="Enter YES or NO">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <strong>Executive company contact details</strong>
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <label for="contractorCompanyName"><strong>Company name:</strong></label>
+                <input id="contractorCompanyName" type="text" class="form-control" name="contractorCompanyName"
+                  value="<%= textDataObject.contractorCompanyName %>" placeholder="Company name">
+                <label for="contractorLocationCity"><strong>City:</strong></label>
+                <input id="contractorLocationCity" type="text" class="form-control" name="contractorLocationCity"
+                  value="<%= textDataObject.contractorLocationCity %>" placeholder="City">
+                <label for="contractorPostCode"><strong>Postal code:</strong></label>
+                <input id="contractorPostCode" type="text" class="form-control" name="contractorPostCode"
+                  value="<%= textDataObject.contractorPostCode %>" placeholder="Postal code">
+                <label for="contractorStreet"><strong>Street:</strong></label>
+                <input id="contractorStreet" type="text" class="form-control" name="contractorStreet"
+                  value="<%= textDataObject.contractorStreet %>" placeholder="Street">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-success">Confirm changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<%- include('footer'); -%>

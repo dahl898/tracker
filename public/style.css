@@ -1,0 +1,134 @@
+body {
+  background-color: #344D67;
+  color: #FFFBEB;
+}
+h1 {
+  text-align: center;
+}
+h5 {
+  margin-bottom: 0;
+}
+i {
+  margin: auto;
+}
+.edit-h3 {
+  padding-top: 1%;
+  text-align: center;
+}
+.center-header{
+  text-align: center;
+  padding-top: 3%;
+}
+.rules {
+  padding: 9%;
+}
+
+.compose-h1 {
+  text-align: center;
+  padding-top: 2%;
+}
+.compose-p {
+  text-align: center;
+  padding-top: 2%;
+}
+.compose-input {
+  padding: 2% 2% 0;
+}
+.check-input-div {
+  padding: 2% 20% 0;
+}
+.check-h1 {
+  padding-top: 2%;
+  text-align: center;
+}
+
+.check-group-buttons-div {
+  width: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.custom-cred-class {
+  padding: 1% 10%;
+  margin-bottom: 0%!important;
+}
+.custom-cred-label {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.custom-admin-switch {
+  padding-top: 4%;
+  margin-bottom: 4%;
+}
+.custom-btn-delete {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.users-custom-div {
+  padding-top: 1%;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+.custom-users-btn {
+  padding: 3% 10%;
+  box-sizing:unset;
+}
+.custom-projects-div {
+  padding-top: 2%;
+}
+/* .cartman-img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 79%;
+} */
+.custom-failure-icon{
+  color: red;
+  text-align: center;
+  margin-top: 10%;
+}
+.modal-body, .modal-title {
+  color: black
+}
+.modal-body {
+  text-align: center;
+}
+.custom-singlebtn-in-group-singlePost {
+  padding-left: auto;
+  padding-right: auto;
+}
+.noItems-h1 {
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+.failure-h1, .success-h1 {
+  text-align: center;
+  padding-top: 2%;
+  margin: 0 2%
+}
+.custom-success-icon {
+  color: green;
+  text-align: center;
+  margin-top: 10%;
+}
+.custom-alreadyExists-icon {
+  color: yellow;
+  text-align: center;
+  margin-top: 10%;
+}
+.single-post-btns {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.single-post-btn {
+  margin: 1%;
+}
+.navbar-image {
+  margin-right: 0.5%;
+}
+
+

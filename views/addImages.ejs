@@ -1,0 +1,37 @@
+<%- include('header'); -%>
+  <div class="container-fluid">
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-wrap">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Processing...</h1>
+          </div>
+          <div class="modal-body text-wrap">
+            <p>Project photos are being updated. Please do not close the browser window. The procedure may take a few
+              minutes, depending on the number and size of the attached files.</p>
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="compose-h1">Add more photos for the project with ID: <%= agreementID %>
+    </h1>
+    <p class="compose-p">Please do not duplicate the photos, add only a new ones.</p>
+    <div class="compose-input">
+      <form action="/projects/<%= _id %>/<%= agreementID %>/images" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="formFileMultiple" class="form-label"><strong>Add photos:</strong></label>
+          <input class="form-control" name="files" type="file" accept="image/*" id="formFileMultiple" multiple>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-success" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">Accept</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<%- include('footer'); -%>

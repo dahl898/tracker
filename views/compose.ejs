@@ -1,0 +1,132 @@
+<%- include('header'); -%>
+  <div class="container-fluid">
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Processing...</h1>
+          </div>
+          <div class="modal-body">
+            <p>The process of creating a new project is in progress. Please do not close the browser window. The procedure may take a few seconds to a few minutes, depending on the number and size of the attached files.</p>
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="compose-h1">Compose project description</h1>
+    <p class="compose-h1">Please enter only letters from latin alfabet to the fields: "Customer First Name" and "Customer Last Name". Otherwise it will throw an error when you will try to download an excel file later.</p>
+    <div class="compose-input">
+      <form action="/compose" method="POST" enctype="multipart/form-data">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                <strong>Customer contact details</strong> </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <label for="investorCreds"><strong>Customer (first and last name):</strong></label>
+                <div id="investorCreds" class="input-group">
+                  <input type="text" class="form-control" name="investorFirstName" placeholder="First name">
+                  <input type="text" class="form-control" name="investorLastName" placeholder="Last name">
+                </div>
+                <label for="investorLocationCity"><strong>City:</strong></label>
+                <input id="investorLocationCity" type="text" class="form-control" name="investorLocationCity"
+                  placeholder="Customer location (city)">
+                <label for="investorPostCode"><strong>Postal code:</strong></label>
+                <input id="investorPostCode" type="text" class="form-control" name="investorPostCode"
+                  placeholder="Customer location (postal code)">
+                <label for="investorStreet"><strong>Street:</strong></label>
+                <input id="investorStreet" type="text" class="form-control" name="investorStreet" placeholder="Customer location (street)">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <strong>Project details</strong>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <label for="agreementID"><strong>Project ID:</strong></label>
+                <input id="agreementID" class="form-control" name="agreementID" type="text" value="<%= agreementID %>"
+                  readonly>
+                <label for="date"><strong>Date:</strong></label>
+                <input id="date" class="form-control" name="date" type="text" placeholder="When the contract has been signed?">
+                <label for="photosCount"><strong>Number of photos:</strong></label>
+                <input id="photosCount" class="form-control" name="photosCount" type="text"
+                  placeholder="How many photos were contracted?">
+                <label for="photosType"><strong>Type of photos:</strong></label>
+                <input id="photosType" class="form-control" name="photosType" type="text" placeholder="What type of photos client ordered?">
+                <label for="description"><strong>Brief description of desired content:</strong></label>
+                <input id="description" class="form-control" name="description" type="text"
+                  placeholder="What must be pictured?">
+                <label for="estimatedPrice"><strong>Estimated price:</strong></label>
+                <input id="estimatedPrice" class="form-control" name="estimatedPrice" type="text"
+                  placeholder="What was the estimated price for the project (USD)">
+                <label for="paymentStatus"><strong>Payment received?</strong></label>
+                <input id="paymentStatus" class="form-control" name="paymentStatus" type="text"
+                  placeholder="Enter YES or NO">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <strong>Executive company contact details</strong>
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <label for="contractorCompanyName"><strong>Company name:</strong></label>
+                <input id="contractorCompanyName" type="text" class="form-control" name="contractorCompanyName"
+                  placeholder="Company name" value="Some Company">
+                <label for="contractorLocationCity"><strong>City:</strong></label>
+                <input id="contractorLocationCity" type="text" class="form-control" name="contractorLocationCity"
+                  placeholder="City" value="Eldorado">
+                <label for="contractorPostCode"><strong>Postal code:</strong></label>
+                <input id="contractorPostCode" type="text" class="form-control" name="contractorPostCode"
+                  placeholder="Postal code" value="00-000">
+                <label for="contractorStreet"><strong>Street:</strong></label>
+                <input id="contractorStreet" type="text" class="form-control" name="contractorStreet"
+                  placeholder="Street" value="Faker street">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <strong>Photos</strong>
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="mb-3">
+                  <label for="formFileMultiple" class="form-label"><strong>Add project photos:</strong></label>
+                  <input class="form-control" name="files" type="file" accept="image/*" id="formFileMultiple" multiple>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-success" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<%- include('footer'); -%>

@@ -1,0 +1,19 @@
+<%- include('header'); -%>
+  <h2 class="check-h1">Please enter a unique project ID without spaces and special characters.</h2>
+  <p class="check-h1">Lower dash character ("_") is allowed, so you can use it as a divider, if you need to.</p>
+  <form action="/check" method="POST">
+    <div class="mb-3 check-input-div">
+      <input class="form-control" type="text" placeholder="Project ID" name="agreementID"
+        aria-label="default input example" pattern="([A-Za-z0-9_])+"
+        title="Please use '_' instead of special characters and spaces.">
+    </div>
+    <div class="check-buttons-div">
+      <div class="btn-group check-group-buttons-div" role="group" aria-label="Basic mixed styles example">
+        <input type="submit" class="btn btn-secondary check-buttons" form="goBack" value="Cancel"></input>
+        <button type="submit" class="btn btn-success check-buttons">Done</button>
+      </div>
+    </div>
+  </form>
+  <form id="goBack" action="/" method="GET"></form>
+
+<%- include('footer'); -%>
