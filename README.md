@@ -90,7 +90,7 @@ ITER=   (number of iterations when hashing the user password)
 KEYLEN=   (length of the generated hash from user password)
 
 
-ALG=    (algorithm used for generating the hash (for example 'sha512')
+ALG=    (algorithm used for generating the hash (for example 'sha512'))
 
 
 # Firebase service account
