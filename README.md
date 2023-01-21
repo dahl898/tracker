@@ -93,7 +93,7 @@ KEYLEN=   (length of the generated hash from user password)
 ALG=    (algorithm used for generating the hash (for example 'sha512')
 
 
-# Firebase service account.
+# Firebase service account
 You must issue a service-account.json file in your Firebase project settings -> Service Accounts -> Generate new private key.
 To store it as an environment variable you must convert your service-account.json file to a base64 encoded string.
 You can do it in your node.js app in such a way:
