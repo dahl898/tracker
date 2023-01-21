@@ -1,5 +1,5 @@
 # tracker
-Web app where user can create his project description with images and then if needed export it to Excel and download images as ZIP file. It can be useful for people who run small buisnesses and have about a dozen employees working on separate projects. The app is meant to keep track of all the projects that employees are working on.
+Web app where user can create his project description with images and then if needed export it to Excel and download images in a ZIP file. It can be useful for people who run small buisnesses and have about a dozen employees working on separate projects. The app is meant to keep track of all the projects that employees are working on.
 
 
 Please be aware that this app was created only to put to use some knowledge that I've gained. It's not a commercial product in any way.
@@ -9,7 +9,7 @@ Please be aware that this app was created only to put to use some knowledge that
 tracker takes text data provided by user and saves it to Firestore database. Images are saved in Firebase Storage, but links to them are saved in Firestore. This allows to avoid saving large amounts of data into Firestore which aims to reduce costs.
 
 
-traker has been written using node.js, express and firebase, as well as a number of libraries from npm.
+traker has been written using node.js with express, ejs view engine and a number of libraries from npm.
 The authentication in the app is done using passport library and local strategy in conjunction with express-session library and Firestore-store npm library to 
 store user sessions at Firestore.
 
@@ -25,7 +25,7 @@ The abovementioned problem with security rules concerns only Firebase Storage be
 no matter what you've set. For example, if you set "allow read and write: if false;" for Firestore, the app will work fine and nobody will have access to your Firestore instance except the app.
 
 
-After creating a project you can download text data to Excel file, download images to your local machine as ZIP files, modify the project, add new images or delete the project. It's handy for making reports and creating official documentation for projects the company is working on. 
+After creating a project you can download text data to Excel file, download images to your local machine in ZIP files, modify the project, add new images or delete the project. It's handy for making reports and creating official documentation for projects the company is working on. 
 
 
 # How to make it work:
