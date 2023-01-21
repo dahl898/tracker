@@ -100,6 +100,8 @@ You can do it in your node.js app in such a way:
 
 
 const serviceAccVar = Buffer.from(JSON.stringify("copy your service-account.json contents here")).toString('base64')
+
+
 console.log(serviceAccVar)
 
 
