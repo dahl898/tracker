@@ -35,12 +35,9 @@ app.set('view engine', 'ejs');
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
-    "default-src": ["'self'", "https://kit.fontawesome.com/", "https://ka-f.fontawesome.com/"],
-    "script-src": ["'self'", "https://kit.fontawesome.com/","https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js", "https://ka-f.fontawesome.com/"],
-    "style-src": ["'self'", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js", "https://kit.fontawesome.com/", "bootstrap.min.css/", "https://ka-f.fontawesome.com/", "'sha256-uFa61qf/4W07oOoNbG/gUmOF69EeWJou+8v5c4bp6kA='", "'sha256-4Cqrb9+UVnxYYbmkWOWFDIDtOh5RSNjO41psqDRsOhw='", "'sha256-PlTkgCr7abMkWLmLhbsMIx5IZAK+f/mrWppZJA1W79M='", "'sha256-slyjg7AL1/N0IDV9hPfojVARaaH5aG3D9Ld82aW/O9Y='"],
-    "img-src": ["'self'", "https: data:", "https://kit.fontawesome.com/", "https://firebasestorage.googleapis.com/", "bootstrap.min.css/", "https://ka-f.fontawesome.com/", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"],
-    "object-src": ["'self'", "https://firebasestorage.googleapis.com/"],
-    "font-src": ["'self'", "https://kit.fontawesome.com/", "https://ka-f.fontawesome.com/"]
+    "script-src": ["'self'", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"],
+    "style-src": ["'self'", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"],
+    "img-src": ["'self'", "https: data:", "https://firebasestorage.googleapis.com/"]
     }
   },
   crossOriginResourcePolicy: { policy: "cross-origin" },
